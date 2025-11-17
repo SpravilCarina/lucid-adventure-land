@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Heart, Gamepad2, Star, Users } from "lucide-react";
+import { BookOpen, Heart, Gamepad2, Star, Users, ImageIcon } from "lucide-react";
 
 const Navigation = () => {
   const location = useLocation();
@@ -8,6 +8,7 @@ const Navigation = () => {
   const navItems = [
     { path: "/", label: "Home", icon: null },
     { path: "/story", label: "Story", icon: BookOpen },
+    { path: "/gallery", label: "Gallery", icon: ImageIcon },
     { path: "/mindfulness", label: "Calm Time", icon: Heart },
     { path: "/games", label: "Games", icon: Gamepad2 },
     { path: "/rewards", label: "Rewards", icon: Star },

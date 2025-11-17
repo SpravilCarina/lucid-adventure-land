@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      story_images: {
+        Row: {
+          created_at: string
+          id: string
+          image_url: string
+          step_number: number
+          step_text: string
+          story_name: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          image_url: string
+          step_number: number
+          step_text: string
+          story_name: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          image_url?: string
+          step_number?: number
+          step_text?: string
+          story_name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

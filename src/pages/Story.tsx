@@ -580,6 +580,22 @@ const Story = () => {
       
       if (data?.imageUrl) {
         setStoryImage(data.imageUrl);
+        
+        // Save image to gallery
+        if (currentAdventure && story) {
+          const { error: insertError } = await supabase
+            .from('story_images')
+            .insert({
+              story_name: currentAdventure.title,
+              step_number: currentStep + 1,
+              step_text: story.text,
+              image_url: data.imageUrl
+            });
+          
+          if (insertError) {
+            console.error('Error saving image to gallery:', insertError);
+          }
+        }
       }
     } catch (error) {
       console.error('Error generating image:', error);
